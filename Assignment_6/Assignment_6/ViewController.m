@@ -129,8 +129,12 @@ NSData *data;
         NSUserDefaults *defaultssi = [NSUserDefaults standardUserDefaults];
         NSMutableArray *empImageArr = [[defaultssi objectForKey:@"empImage"]mutableCopy];
         [employeesArr removeObjectAtIndex:indexPath.row];
-   
         [empImageArr removeObjectAtIndex:indexPath.row];
+        
+        //[self.employeesArray removeAllObjects];
+        //[self.empImageArray removeAllObjects];
+        //[self.employeesArray addObjectsFromArray:employeesArr];
+        //[self.empImageArray addObjectsFromArray:empImageArr];
         
         [defaults removeObjectForKey:@"emp"];
         [defaults setObject:employeesArr forKey:@"emp"];
@@ -138,7 +142,7 @@ NSData *data;
         [defaultsimage removeObjectForKey:@"empImage"];
         [defaultsimage setObject:empImageArr forKey:@"empImage"];
         [defaultsimage synchronize];
-         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [tableView reloadData];
     }
 }
