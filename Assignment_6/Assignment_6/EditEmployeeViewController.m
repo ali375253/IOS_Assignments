@@ -24,6 +24,7 @@
     NSArray *emp=[empData componentsSeparatedByString:@"/"];
     _employeeIdTF.text=[emp objectAtIndex:0];
     _nameTF.text=[emp objectAtIndex:1];
+    self.title=_nameTF.text;
     _positionTF.text=[emp objectAtIndex:2];
     NSString *gender=[emp objectAtIndex:3];
     NSString *value=@"Male";
@@ -91,6 +92,8 @@
         }
         
     }
+    /*UIViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AddEmployeeViewController"];
+    [self presentViewController:vc animated:YES completion:nil];*/
 }
 
 - (IBAction)maleToggle:(UIButton *)sender {

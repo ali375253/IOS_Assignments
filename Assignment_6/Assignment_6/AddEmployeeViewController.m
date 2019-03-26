@@ -152,6 +152,8 @@
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
+
+
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
 
@@ -159,6 +161,9 @@
          didFinishPickingImage:(UIImage *)image
                    editingInfo:(NSDictionary *)editingInfo
 {
+    [image drawInRect:CGRectMake(0, 0, 80, 80)];
+    _imageView.layer.cornerRadius=40;
+    _imageView.clipsToBounds = YES;
     self.imageView.image = image;
     [self dismissModalViewControllerAnimated:YES];
     
