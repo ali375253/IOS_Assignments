@@ -184,9 +184,8 @@
                                             <action selector="toggleMaleRadioButton:" destination="geu-mo-Tob" eventType="touchUpInside" id="JyT-Wk-Llc"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDk-KO-OVH">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userimage" translatesAutoresizingMaskIntoConstraints="NO" id="wDk-KO-OVH">
                                         <rect key="frame" x="113" y="8" width="94" height="76"/>
-                                        <color key="backgroundColor" red="0.86873922540000004" green="0.86873922540000004" blue="0.86873922540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="94" id="WlZ-uU-b3F"/>
                                             <constraint firstAttribute="height" constant="76" id="ZHp-uu-Kk0"/>
@@ -554,9 +553,8 @@
                                             <segue destination="geu-mo-Tob" kind="push" id="QGG-bj-uTF"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-15-3jc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userimage" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-15-3jc">
                                         <rect key="frame" x="113" y="8" width="94" height="76"/>
-                                        <color key="backgroundColor" red="0.86873922540000004" green="0.86873922540000004" blue="0.86873922540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="76" id="jcC-BM-K9Y"/>
                                             <constraint firstAttribute="width" constant="94" id="rxB-qh-DhT"/>
@@ -654,8 +652,10 @@
     <resources>
         <image name="radio_off" width="20" height="19"/>
         <image name="radio_on" width="22" height="21"/>
+        <image name="userimage" width="48" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pd4-eu-lD9"/>
         <segue reference="QGG-bj-uTF"/>
     </inferredMetricsTieBreakers>
 </document>

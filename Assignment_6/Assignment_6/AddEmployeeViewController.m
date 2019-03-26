@@ -19,16 +19,18 @@
 @synthesize Male,Female;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(100.0, 100.0, 100.0, 100.0)];
+    //[imageview setImage:[UIImage imageNamed:@"userimage.png"]];
+    [imageview setUserInteractionEnabled:YES];
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
-    [_imageView addGestureRecognizer:singleTap];
+    [imageview addGestureRecognizer:singleTap];
     
-    [self.view addSubview:_imageView];
+    [self.view addSubview:imageview];
 }
 
 -(void)singleTapping:(UIGestureRecognizer *)recognizer {
-    [self pickImage:nil];
+    [self pickImage:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +95,12 @@
     [defaults setObject:employeesArray forKey:@"emp"];
     [defaults synchronize];
     
+    _employeeIdTextField.text=@"";
+    _nameTextField.text=@"";
+    _positionTextField.text=@"";
+    [Male setSelected:NO];
+    [Female setSelected:NO];
+    _addressTextField.text=@"";
     //NSMutableArray *employeesArray;
     
     /*Employee *myemployee = [[Employee alloc] init];

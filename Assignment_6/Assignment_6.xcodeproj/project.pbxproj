@@ -14,6 +14,7 @@
 		F01B41332244BA7D001131D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01B41312244BA7D001131D7 /* LaunchScreen.storyboard */; };
 		F01B41362244BA7D001131D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F01B41352244BA7D001131D7 /* main.m */; };
 		F029878D2244EF7D0036CE13 /* AddEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F029878C2244EF7D0036CE13 /* AddEmployeeViewController.m */; };
+		F04F015C2249EB54002E0DE0 /* userimage.png in Resources */ = {isa = PBXBuildFile; fileRef = F04F015B2249EB53002E0DE0 /* userimage.png */; };
 		F05C5DC322460F63003CD543 /* mycell.m in Sources */ = {isa = PBXBuildFile; fileRef = F05C5DC222460F63003CD543 /* mycell.m */; };
 		F06C43372248E74D00EA8912 /* EditEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06C43362248E74D00EA8912 /* EditEmployeeViewController.m */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		F01B41352244BA7D001131D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F029878B2244EF7D0036CE13 /* AddEmployeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddEmployeeViewController.h; sourceTree = "<group>"; };
 		F029878C2244EF7D0036CE13 /* AddEmployeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEmployeeViewController.m; sourceTree = "<group>"; };
+		F04F015B2249EB53002E0DE0 /* userimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = userimage.png; path = ../../userimage.png; sourceTree = "<group>"; };
 		F05C5DC122460F63003CD543 /* mycell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mycell.h; sourceTree = "<group>"; };
 		F05C5DC222460F63003CD543 /* mycell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mycell.m; sourceTree = "<group>"; };
 		F06C43352248E74D00EA8912 /* EditEmployeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditEmployeeViewController.h; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				F01B41272244BA7D001131D7 /* AppDelegate.m */,
 				F029878B2244EF7D0036CE13 /* AddEmployeeViewController.h */,
 				F029878C2244EF7D0036CE13 /* AddEmployeeViewController.m */,
+				F04F015B2249EB53002E0DE0 /* userimage.png */,
 				F01B41292244BA7D001131D7 /* ViewController.h */,
 				F01B412A2244BA7D001131D7 /* ViewController.m */,
 				F06C43352248E74D00EA8912 /* EditEmployeeViewController.h */,
@@ -146,6 +149,7 @@
 			files = (
 				F01B41332244BA7D001131D7 /* LaunchScreen.storyboard in Resources */,
 				F01B41302244BA7D001131D7 /* Assets.xcassets in Resources */,
+				F04F015C2249EB54002E0DE0 /* userimage.png in Resources */,
 				F01B412E2244BA7D001131D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
