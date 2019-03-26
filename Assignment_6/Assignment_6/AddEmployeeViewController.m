@@ -16,11 +16,14 @@
 
 @implementation AddEmployeeViewController
 @synthesize employeesArray;
+@synthesize empImageArray;
 @synthesize Male,Female;
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(100.0, 100.0, 100.0, 100.0)];
     //[imageview setImage:[UIImage imageNamed:@"userimage.png"]];
+    self.imageView.layer.cornerRadius=40;
+    self.imageView.clipsToBounds = YES;
     [imageview setUserInteractionEnabled:YES];
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
@@ -75,12 +78,15 @@
     
     NSString *employeeDetails;
     employeesArray = [[NSMutableArray alloc] initWithCapacity:40];
+    empImageArray = [[NSMutableArray alloc] initWithCapacity:40];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSMutableArray *registeredEmp = [defaults objectForKey:@"emp"];
+    NSMutableArray *registeredData=[defaults objectForKey:@"empImage"];
     if ([registeredEmp count] != 0) {
         for(int i=0;i<registeredEmp.count;i++){
             [employeesArray addObject:[registeredEmp objectAtIndex:i]];
+            [empImageArray addObject:[registeredData objectAtIndex:i]];
         }
     }
     employeeDetails=[NSString stringWithFormat:@"%@/%@/%@", _employeeIdTextField.text, _nameTextField.text, _positionTextField.text];
@@ -95,6 +101,14 @@
     [defaults setObject:employeesArray forKey:@"emp"];
     [defaults synchronize];
     
+    NSData *dataImage = UIImagePNGRepresentation(self.imageView.image);
+    [empImageArray addObject:dataImage];
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userdefaults setObject:empImageArray forKey:@"empImage"];
+    [userdefaults synchronize];
+    
+    _imageView.image=[UIImage imageNamed:@"userimage.png"];
     _employeeIdTextField.text=@"";
     _nameTextField.text=@"";
     _positionTextField.text=@"";
@@ -147,6 +161,8 @@
 {
     self.imageView.image = image;
     [self dismissModalViewControllerAnimated:YES];
+    
+    
 }
 
 

@@ -19,6 +19,7 @@
 - (IBAction)updateEmployeeDetails:(UIButton *)sender;
 - (IBAction)maleToggle:(UIButton *)sender;
 - (IBAction)femaleToggle:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 @end

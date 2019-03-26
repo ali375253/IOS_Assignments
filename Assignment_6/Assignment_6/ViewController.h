@@ -12,7 +12,10 @@
     //NSMutableArray *employeesArray;
 }
 @property(nonatomic,assign)NSMutableArray *employeesArray;
+@property(nonatomic,assign)NSMutableArray *empImageArray;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+
+
 
 @end
 

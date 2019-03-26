@@ -12,7 +12,7 @@
 UIImagePickerControllerDelegate>
 
 @property(strong,retain)NSMutableArray *employeesArray;
-
+@property(strong,retain)NSMutableArray *empImageArray;
 @property (weak, nonatomic) IBOutlet UIButton *Male;
 @property (weak, nonatomic) IBOutlet UIButton *Female;
 - (IBAction)toggleMaleRadioButton:(UIButton *)sender;

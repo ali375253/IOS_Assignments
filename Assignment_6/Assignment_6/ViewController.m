@@ -16,12 +16,17 @@
 
 @implementation ViewController
 @synthesize employeesArray;
+@synthesize empImageArray;
 NSUserDefaults *defaults;
+NSUserDefaults *defaultsimage;
 //NSData *encodedObject;
 - (void)viewDidLoad {
     [super viewDidLoad];
     defaults = [NSUserDefaults standardUserDefaults];
     employeesArray = [defaults objectForKey:@"emp"];
+    defaultsimage = [NSUserDefaults standardUserDefaults];
+    empImageArray = [defaultsimage objectForKey:@"empImage"];
+    
     //encodedObject = [defaults objectForKey:@"emp"];
     //AddEmployeeViewController *view = [[AddEmployeeViewController alloc] initWithNibName:@"AddViewController" bundle:nil];
     //self.employeesArray=view.employeesArray;
@@ -51,6 +56,15 @@ NSUserDefaults *defaults;
     [sendEmpData setObject:empList forKey:@"empData"];
     [sendEmpData synchronize];
     
+    NSData *data=[empImageArray objectAtIndex:indexPath.row];
+    UIImage *image = [UIImage imageWithData:data];
+    cell.imageView.layer.cornerRadius=35;
+    cell.imageView.clipsToBounds = YES;
+    cell.imageView.image=image;
+    
+    NSUserDefaults *sendEmpImage=[NSUserDefaults standardUserDefaults];
+    [sendEmpImage setObject:data forKey:@"empImg"];
+    [sendEmpImage synchronize];
     
     //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     //employeesArray = [userDefaults objectForKey:@"employees"];

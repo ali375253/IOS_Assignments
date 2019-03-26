@@ -37,6 +37,14 @@
     }
     _addressTF.text=[emp objectAtIndex:4];
     
+    NSUserDefaults *userdefaultsimg = [NSUserDefaults standardUserDefaults];
+    NSData *rowImg = [[userdefaultsimg objectForKey:@"empImg"] mutableCopy];
+    UIImage *image = [UIImage imageWithData:rowImg];
+    self.imageView.layer.cornerRadius=40;
+    self.imageView.clipsToBounds = YES;
+
+    _imageView.image=image;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +65,9 @@
 - (IBAction)updateEmployeeDetails:(UIButton *)sender {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *employeesArray = [[userdefaults objectForKey:@"emp"] mutableCopy];
+    
     for(int i=0;i<employeesArray.count;i++){
+        
         NSString *row=[employeesArray objectAtIndex:i];
         if([row isEqualToString:empData]){
             NSArray *emp=[row componentsSeparatedByString:@"/"];
