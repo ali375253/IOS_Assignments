@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddEmployeeViewController : UIViewController
+@interface AddEmployeeViewController : UIViewController <UINavigationControllerDelegate,
+UIImagePickerControllerDelegate>
+
 @property(strong,retain)NSMutableArray *employeesArray;
 
 @property (weak, nonatomic) IBOutlet UIButton *Male;
@@ -20,7 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *positionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 - (IBAction)addEmployeeDetails:(UIButton *)sender;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction) pickImage:(id)sender;
 
 
 

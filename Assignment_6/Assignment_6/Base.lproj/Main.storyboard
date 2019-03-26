@@ -186,6 +186,7 @@
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDk-KO-OVH">
                                         <rect key="frame" x="113" y="8" width="94" height="76"/>
+                                        <color key="backgroundColor" red="0.86873922540000004" green="0.86873922540000004" blue="0.86873922540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="94" id="WlZ-uU-b3F"/>
                                             <constraint firstAttribute="height" constant="76" id="ZHp-uu-Kk0"/>
@@ -225,6 +226,7 @@
                                     <constraint firstItem="nDZ-Gh-riN" firstAttribute="centerY" secondItem="UI6-lu-RUv" secondAttribute="centerY" id="gDo-Ds-AVb"/>
                                     <constraint firstItem="q0X-C3-gEQ" firstAttribute="centerY" secondItem="tgL-Zl-iiq" secondAttribute="centerY" id="iqc-Ll-XrE"/>
                                     <constraint firstAttribute="trailing" secondItem="nDZ-Gh-riN" secondAttribute="trailing" constant="17" id="isi-Dw-MIv"/>
+                                    <constraint firstItem="UI6-lu-RUv" firstAttribute="top" secondItem="jBt-l9-Pil" secondAttribute="top" constant="107" id="k2W-IQ-cq0"/>
                                     <constraint firstItem="AgA-5O-aPg" firstAttribute="leading" secondItem="Qgn-ym-bMv" secondAttribute="trailing" constant="7" id="ksj-7q-63x"/>
                                     <constraint firstItem="Wkl-3v-5FN" firstAttribute="leading" secondItem="q0X-C3-gEQ" secondAttribute="leading" id="luG-zq-Xg7"/>
                                     <constraint firstItem="tgL-Zl-iiq" firstAttribute="leading" secondItem="q0X-C3-gEQ" secondAttribute="trailing" constant="7" id="mKd-Ku-i5q"/>
@@ -244,9 +246,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wDk-KO-OVH" firstAttribute="centerX" secondItem="2XD-5G-qak" secondAttribute="centerX" id="8vW-wx-9Um"/>
                             <constraint firstItem="jBt-l9-Pil" firstAttribute="top" secondItem="2XD-5G-qak" secondAttribute="top" id="BeE-XW-Dal"/>
                             <constraint firstItem="jBt-l9-Pil" firstAttribute="bottom" secondItem="2XD-5G-qak" secondAttribute="bottom" id="KuT-wi-ycF"/>
                             <constraint firstItem="jBt-l9-Pil" firstAttribute="trailing" secondItem="2XD-5G-qak" secondAttribute="trailing" id="WIT-Oo-sGO"/>
+                            <constraint firstItem="wDk-KO-OVH" firstAttribute="top" secondItem="2XD-5G-qak" secondAttribute="top" constant="8" id="h1c-dB-6Nz"/>
+                            <constraint firstItem="2XD-5G-qak" firstAttribute="trailing" secondItem="wDk-KO-OVH" secondAttribute="trailing" constant="113" id="rZM-Sc-BOE"/>
                             <constraint firstItem="jBt-l9-Pil" firstAttribute="leading" secondItem="2XD-5G-qak" secondAttribute="leading" id="zdQ-4Y-tDZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2XD-5G-qak"/>
@@ -259,6 +264,7 @@
                         <outlet property="Male" destination="Gyt-6g-6Rp" id="Cw3-de-RAh"/>
                         <outlet property="addressTextField" destination="AgA-5O-aPg" id="aOQ-2b-E8M"/>
                         <outlet property="employeeIdTextField" destination="nDZ-Gh-riN" id="LeH-zX-nUM"/>
+                        <outlet property="imageView" destination="wDk-KO-OVH" id="jIp-8i-qgq"/>
                         <outlet property="nameTextField" destination="Pg0-uz-Zw4" id="JdE-he-6dp"/>
                         <outlet property="positionTextField" destination="tgL-Zl-iiq" id="Drt-pa-Hyp"/>
                     </connections>
@@ -550,6 +556,7 @@
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-15-3jc">
                                         <rect key="frame" x="113" y="8" width="94" height="76"/>
+                                        <color key="backgroundColor" red="0.86873922540000004" green="0.86873922540000004" blue="0.86873922540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="76" id="jcC-BM-K9Y"/>
                                             <constraint firstAttribute="width" constant="94" id="rxB-qh-DhT"/>
@@ -569,6 +576,7 @@
                                     <constraint firstAttribute="trailing" secondItem="oNl-cY-brn" secondAttribute="trailing" constant="17" id="7pg-fc-Oti"/>
                                     <constraint firstItem="u47-4H-rpn" firstAttribute="leading" secondItem="b1Z-8y-yfo" secondAttribute="trailing" constant="7" id="8Ua-DJ-Q4y"/>
                                     <constraint firstItem="urS-jD-hVd" firstAttribute="leading" secondItem="b1Z-8y-yfo" secondAttribute="leading" id="8qQ-xv-L2e"/>
+                                    <constraint firstItem="rkX-r0-OJg" firstAttribute="top" secondItem="vXK-x9-XVe" secondAttribute="top" constant="107" id="9AI-QD-ugc"/>
                                     <constraint firstItem="tc6-g4-Skc" firstAttribute="leading" secondItem="pem-Al-Wv4" secondAttribute="trailing" constant="4" id="9x5-gn-rro"/>
                                     <constraint firstItem="pem-Al-Wv4" firstAttribute="centerY" secondItem="tc6-g4-Skc" secondAttribute="centerY" id="Ezd-yr-f3S"/>
                                     <constraint firstItem="b1Z-8y-yfo" firstAttribute="leading" secondItem="rkX-r0-OJg" secondAttribute="leading" id="FlA-6X-7JS"/>
@@ -648,7 +656,6 @@
         <image name="radio_on" width="22" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pd4-eu-lD9"/>
         <segue reference="QGG-bj-uTF"/>
     </inferredMetricsTieBreakers>
 </document>

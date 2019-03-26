@@ -20,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
+    [singleTap setNumberOfTapsRequired:1];
+    [_imageView addGestureRecognizer:singleTap];
+    
+    [self.view addSubview:_imageView];
+}
+
+-(void)singleTapping:(UIGestureRecognizer *)recognizer {
+    [self pickImage:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,5 +121,25 @@
     //[userdefaults synchronize];
     
 }
+
+- (IBAction) pickImage:(id)sender{
+    
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc]
+                                                 init];
+    pickerController.delegate = self;
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+- (void) imagePickerController:(UIImagePickerController *)picker
+         didFinishPickingImage:(UIImage *)image
+                   editingInfo:(NSDictionary *)editingInfo
+{
+    self.imageView.image = image;
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end
