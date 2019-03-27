@@ -20,6 +20,7 @@
 @synthesize Male,Female;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(100.0, 100.0, 100.0, 100.0)];
     //[imageview setImage:[UIImage imageNamed:@"userimage.png"]];
     self.imageView.layer.cornerRadius=40;
@@ -75,14 +76,13 @@
 */
 
 - (IBAction)addEmployeeDetails:(UIButton *)sender {
-    
-    NSString *employeeDetails;
     employeesArray = [[NSMutableArray alloc] initWithCapacity:40];
     empImageArray = [[NSMutableArray alloc] initWithCapacity:40];
+    NSString *employeeDetails;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSMutableArray *registeredEmp = [defaults objectForKey:@"emp"];
-    NSMutableArray *registeredData=[defaults objectForKey:@"empImage"];
+    NSMutableArray *registeredEmp = [[defaults objectForKey:@"emp"]mutableCopy];
+    NSMutableArray *registeredData=[[defaults objectForKey:@"empImage"]mutableCopy];
     if ([registeredEmp count] != 0) {
         for(int i=0;i<registeredEmp.count;i++){
             [employeesArray addObject:[registeredEmp objectAtIndex:i]];

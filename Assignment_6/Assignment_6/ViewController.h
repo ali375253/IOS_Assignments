@@ -11,8 +11,8 @@
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     //NSMutableArray *employeesArray;
 }
-@property(nonatomic,assign)NSMutableArray *employeesArray;
-@property(nonatomic,assign)NSMutableArray *empImageArray;
+@property(strong,retain)NSMutableArray *employeesArray;
+@property(strong,retain)NSMutableArray *empImageArray;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 

@@ -21,14 +21,16 @@ NSUserDefaults *defaults;
 NSUserDefaults *defaultsimage;
 NSString *empList;
 NSData *data;
+
 //NSData *encodedObject;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    employeesArray = [NSMutableArray alloc];
+    empImageArray = [NSMutableArray alloc];
     defaults = [NSUserDefaults standardUserDefaults];
-    employeesArray = [defaults objectForKey:@"emp"];
+    employeesArray = [[defaults objectForKey:@"emp"]mutableCopy];
     defaultsimage = [NSUserDefaults standardUserDefaults];
     empImageArray = [defaultsimage objectForKey:@"empImage"];
-    
     //encodedObject = [defaults objectForKey:@"emp"];
     //AddEmployeeViewController *view = [[AddEmployeeViewController alloc] initWithNibName:@"AddViewController" bundle:nil];
     //self.employeesArray=view.employeesArray;
@@ -124,25 +126,28 @@ NSData *data;
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSUserDefaults *defaultss = [NSUserDefaults standardUserDefaults];
-        NSMutableArray *employeesArr = [[defaultss objectForKey:@"emp"]mutableCopy];
-        NSUserDefaults *defaultssi = [NSUserDefaults standardUserDefaults];
-        NSMutableArray *empImageArr = [[defaultssi objectForKey:@"empImage"]mutableCopy];
-        [employeesArr removeObjectAtIndex:indexPath.row];
-        [empImageArr removeObjectAtIndex:indexPath.row];
+        //NSUserDefaults *defaultss = [NSUserDefaults standardUserDefaults];
+        //NSMutableArray *employeesArr = [[defaultss objectForKey:@"emp"]mutableCopy];
+        //NSUserDefaults *defaultssi = [NSUserDefaults standardUserDefaults];
+        //NSMutableArray *empImageArr = [[defaultssi objectForKey:@"empImage"]mutableCopy];
+        NSMutableArray *copyEmpArray=[employeesArray mutableCopy];
+        NSMutableArray *copyEmpImgArray=[empImageArray mutableCopy];
+        [copyEmpArray removeObjectAtIndex:indexPath.row];
+        [copyEmpImgArray removeObjectAtIndex:indexPath.row];
         
+        employeesArray=[copyEmpArray mutableCopy];
+        empImageArray=[copyEmpImgArray mutableCopy];
         //[self.employeesArray removeAllObjects];
         //[self.empImageArray removeAllObjects];
         //[self.employeesArray addObjectsFromArray:employeesArr];
         //[self.empImageArray addObjectsFromArray:empImageArr];
-        
         [defaults removeObjectForKey:@"emp"];
-        [defaults setObject:employeesArr forKey:@"emp"];
+        [defaults setObject:employeesArray forKey:@"emp"];
         [defaults synchronize];
         [defaultsimage removeObjectForKey:@"empImage"];
-        [defaultsimage setObject:empImageArr forKey:@"empImage"];
+        [defaultsimage setObject:empImageArray forKey:@"empImage"];
         [defaultsimage synchronize];
-        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [tableView reloadData];
     }
 }
