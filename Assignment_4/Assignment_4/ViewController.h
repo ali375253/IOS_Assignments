@@ -11,6 +11,8 @@
 @interface ViewController : UIViewController{
     bool operatorPressed;
     char op;
+    NSString *equation;
+    bool equalPressed;
     NSString *firstValue;
     NSString *secondValue;
     NSString *optr;
